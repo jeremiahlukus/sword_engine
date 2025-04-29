@@ -1,16 +1,27 @@
-#!/bin/sh
+#!/bin/bash
+
+# Exit on error
 set -e
 
-echo '== Installing dependencies =='
-bundle install
+echo "Setting up SWORD Engine development environment..."
 
-echo "== Preparing database =="
-./bin/rails db:prepare
+# Build and start containers
+echo "Building and starting Docker containers..."
+docker-compose build
+docker-compose up -d
 
-echo "== Removing old logs and tempfiles =="
-./bin/rails log:clear tmp:clear
+# Wait for services to be ready
+echo "Waiting for services to be ready..."
+sleep 10
 
-echo "== Restarting application server =="
-./bin/rails restart
+# Check SWORD Engine health
+echo "Checking SWORD Engine health..."
+curl -f http://localhost:8080/health || {
+    echo "SWORD Engine health check failed"
+    exit 1
+}
 
-# ./bin/yarn
+echo "Setup complete! Services are running:"
+echo "- Rails app: http://localhost:3000"
+echo "- SWORD Engine: http://localhost:8080"
+echo "- Redis: localhost:6379"

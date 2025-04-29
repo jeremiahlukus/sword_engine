@@ -17,12 +17,12 @@ Setting up the foundational environment and repository structure for Bible Explo
 ### [x] Version Control & Branching
 - [x] Set up main and develop branches
 - [x] Define branch naming conventions (`feature/`, `bugfix/`, `hotfix/`, `release/`)
-- [ ] Add initial commit
+- [x] Add initial commit
 
-### [ ] Documentation
-- [ ] Add PRD, schema design, and code style docs to /docs
-- [ ] Add CONTRIBUTING.md
-- [ ] Add LICENSE
+### [x] Documentation
+- [x] Add PRD, schema design, and code style docs to /docs
+- [x] Add CONTRIBUTING.md
+- [x] Add LICENSE
 
 ---
 

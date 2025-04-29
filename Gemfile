@@ -10,10 +10,16 @@ gem "sprockets-rails"
 gem "stimulus-rails"
 gem "turbo-rails"
 gem "jbuilder"
+gem 'devise'
+gem 'pundit'
+gem 'redis'
+gem 'lambdakiq'
 
 group :development, :test do
   gem "debug"
   gem "webrick"
+  gem 'rspec-rails'
+  gem 'rubocop', require: false
 end
 
 group :development do
